@@ -15,6 +15,8 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
+gem 'unicorn', group: :production
+
 
 group :development do
   gem 'spring'
