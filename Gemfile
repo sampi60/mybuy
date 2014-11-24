@@ -15,7 +15,12 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
-gem 'unicorn', group: :production
+group :production do
+  gem 'unicorn'
+
+  # for heroku
+  gem 'rails_12factor'
+end
 
 
 group :development do
