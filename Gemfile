@@ -8,6 +8,13 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'haml'
+gem 'haml-rails'
+
+# twitter bootstrap
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
 
 group :development do
   gem 'spring'
