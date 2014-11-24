@@ -5,6 +5,7 @@
   %thead
     %tr
       %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:photo)
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:description)
       %th= model_class.human_attribute_name(:created_at)
@@ -13,7 +14,8 @@
     - @products.each do |product|
       %tr
         %td= link_to product.id, product_path(product)
-        %td= product.name
+        %td= link_to image_tag(product.photo.url(:small)), product_path(product) if product.photo?
+        %td= link_to product.name, product_path(product)
         %td= product.description
         %td=l product.created_at
         %td

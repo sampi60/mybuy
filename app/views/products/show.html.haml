@@ -6,10 +6,16 @@
   %strong= model_class.human_attribute_name(:name) + ':'
   %br
   = @product.name
+
 %p
   %strong= model_class.human_attribute_name(:description) + ':'
   %br
   = @product.description
+
+%p
+  %strong= model_class.human_attribute_name(:photo) + ':'
+  %br
+  = link_to image_tag(@product.photo.url(:medium)), @product.photo.url if @product.photo?
 
 
 = link_to t('.back', :default => t("helpers.links.back")), products_path, :class => 'btn btn-default'

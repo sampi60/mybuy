@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'haml'
 gem 'haml-rails'
+gem 'paperclip'
 
 # twitter bootstrap
 gem 'therubyracer'
