@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'haml'
 gem 'haml-rails'
+gem 'devise'
 
 gem 'paperclip'
 gem 'aws-sdk'
