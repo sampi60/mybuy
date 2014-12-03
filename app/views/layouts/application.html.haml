@@ -8,6 +8,11 @@
 
   %body
     .container
+      .notice
+        - if notice
+          %p.notice= notice
+        - if alert
+          %p.alert= alert
       .row
         .span9
           = yield
