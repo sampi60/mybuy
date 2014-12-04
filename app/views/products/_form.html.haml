@@ -3,14 +3,26 @@
   .form-group
     = f.label :name, class: 'control-label'
     .controls
-      = f.text_field :name, class: 'form-control', required: true
+      = f.text_field :name, required: true, class: 'form-control'
     = error_span(@product[:name])
 
   .form-group
     = f.label :description, class: 'control-label'
     .controls
-      = f.text_field :description, class: 'form-control'
+      = f.text_area :description, class: 'form-control'
     = error_span(@product[:description])
+
+  .form-group
+    = f.label :price, class: 'control-label'
+    .controls
+      = f.text_field :price, type: :number, min: 0, class: 'form-control'
+    = error_span(@product[:price])
+
+  .form-group
+    = f.label :website, class: 'control-label'
+    .controls
+      = f.text_field :website, class: 'form-control'
+    = error_span(@product[:website])
 
   .form-group
     = f.label :photo, class: 'control-label'
@@ -20,4 +32,4 @@
     = error_span(@product[:description])
 
   = f.submit nil,class: 'btn btn-primary'
-  = link_to t('.cancel', :default => t("helpers.links.cancel")), products_path, :class => 'btn btn-default'
+  = link_to t('.cancel', default: t("helpers.links.cancel")), products_path, class: 'btn btn-default'

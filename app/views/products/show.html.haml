@@ -13,6 +13,16 @@
   = @product.description
 
 %p
+  %strong= model_class.human_attribute_name(:price) + ':'
+  %br
+  = @product.price
+
+%p
+  %strong= model_class.human_attribute_name(:website) + ':'
+  %br
+  = @product.website
+
+%p
   %strong= model_class.human_attribute_name(:photo) + ':'
   %br
   = link_to image_tag(@product.photo.url(:medium)), @product.photo.url if @product.photo?
