@@ -7,9 +7,19 @@
     = csrf_meta_tags
 
   %body
+    .container-fluid
+      = nav_bar fixed: :top, brand: "MyBuy", :responsive => true do
+        = menu_group do
+          = menu_item 'Home', root_path
+        = menu_group pull: :right do
+          - if user_signed_in?
+            = menu_item 'Sign out', destroy_user_session_path, method: :delete
+          - else
+            = menu_item 'Sign in', new_user_session_path
+
+    %div{style: "padding-top: 60px"}
     .container
       .menu
-        =link_to 'Sign out', destroy_user_session_path, method: :delete if user_signed_in?
       .notice
         - if notice
           %p.notice= notice
