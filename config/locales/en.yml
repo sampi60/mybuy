@@ -20,4 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      short_date: "%Y-%m-%d"
+
+  number:
+    format:
+    currency:
+      format:
+        unit: 'PLN'
+        precision: 2
+        format: '%u %n'
+        separator: ','
+        delimiter: ' '
+
