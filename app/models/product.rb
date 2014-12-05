@@ -6,4 +6,6 @@ class Product < ActiveRecord::Base
                                        thumb:  "100x100>",
                                        small:  "50x50>" }
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
+
+  default_scope -> { order :created_at }
 end
