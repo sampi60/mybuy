@@ -8,4 +8,6 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
   default_scope -> { order :created_at }
+
+  belongs_to :user
 end

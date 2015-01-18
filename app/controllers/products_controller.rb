@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product,  only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all
+    @products = current_user.products
   end
 
   def show
@@ -17,6 +18,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
 
     if @product.save
       redirect_to @product, notice: 'Product was successfully created.'
@@ -45,5 +47,9 @@ class ProductsController < ApplicationController
 
     def product_params
       params.require(:product).permit(:name, :description, :photo, :website, :price)
+    end
+
+    def authenticate
+      redirect_to products_url, alert: 'Access denied!' unless @product.user == current_user
     end
 end
