@@ -20,8 +20,7 @@
             = menu_item 'Sign up', new_user_registration_path
             = menu_item 'Sign in', new_user_session_path
 
-    %div{style: "padding-top: 60px"}
-    .container
+    %div{class: main_container_class}
       .menu
       .notice
         = bootstrap_flash

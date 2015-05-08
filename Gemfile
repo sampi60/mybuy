@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'haml'
 gem 'haml-rails'
 gem 'devise'
+gem 'devise-bootstrap-views'
 
 gem 'paperclip'
 gem 'aws-sdk'
